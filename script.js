@@ -1,5 +1,10 @@
+import { flipCard } from "./modules/functions.js";
+
 const memoryGrid = document.querySelector("#memory-grid");
-const gridImages = document.querySelectorAll("#memory-grid > img");
+const cards = document.querySelectorAll(".card");
 const resetBtn = document.querySelector("#reset-btn");
 
-const numOfTurnedCards = 0; //0, 1 || 2
+
+cards.forEach((card) => {
+    card.addEventListener("click", flipCard);
+}); 
