@@ -11,6 +11,10 @@ html {
     background: #8ec2b1;
 }
 
+button {
+    cursor: pointer;
+}
+
 html,
 body,
 main {
@@ -41,11 +45,6 @@ main {
     border: 6px solid #e9c0c1;
     padding: 15px;
     background-color: #fff;
-
-    & .card {
-        height: 100%;
-        width: 100%;
-    }
 }
 
 /*-----------------------CARDS-------------------------*/
@@ -54,7 +53,6 @@ main {
     width: 100%;
     height: 100%;
     perspective: 500px;
-    cursor: pointer;
 }
 
 .content {
@@ -65,11 +63,13 @@ main {
     height: 100%;
     transition: transform 0.7s;
     transform-style: preserve-3d;
+    cursor: pointer;
 }
 
 .content.flipped {
     transform: rotateY(180deg);
     transition: transform 0.5s;
+    cursor: default;
 }
 
 .front-side,
@@ -128,10 +128,20 @@ main {
 }
 
 .back-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
     background: #fff;
     transform: rotateY(180deg);
     /* border: 2px solid #9dc2b5; */
     border: 2px solid #e9c0c1;
+
+    & img {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 #reset-btn {
