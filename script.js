@@ -1,4 +1,5 @@
 "use-strict";
+import { stopTimer, resetTimer, addStartTimerListener } from "./modules/timer.js";
 
 //--------------------------ELEMENTS-----------------------------
 const cards = document.querySelectorAll(".card");
@@ -42,13 +43,13 @@ const checkCardsForMatch = () => {
         numOfFlippedCards = 0;
 
         if (numOfPairs === numOfMatches) {
+            stopTimer();
             console.log("YOU WON");
         }
     }
 };
 
 const flipCard = (e) => {
-    e.stopPropagation();
     const cardContentElem = e.currentTarget.querySelector(".content");
     const cardIcon = cardContentElem.querySelector("img").alt;
 
@@ -105,6 +106,8 @@ const resetGame = (e, array) => {
     let completedAnimationCount = 0;
 
     cards.forEach((card) => {
+        resetTimer();
+
         if (card.classList.contains("flipped")) {
             card.addEventListener("transitionend", () => {
                 completedAnimationCount++;
@@ -138,3 +141,5 @@ cards.forEach((card) => {
 resetBtn.addEventListener("click", (e) => {
     resetGame(e, [...icons]);
 });
+
+addStartTimerListener();
