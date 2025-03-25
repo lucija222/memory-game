@@ -8,6 +8,8 @@
 }
 
 html {
+    --main-accent-color: #EB868F;
+    --border-color: #e9c0c1;
     background: #8ec2b1;
 }
 
@@ -30,6 +32,19 @@ main {
     gap: 20px;
 }
 
+
+/*-----------------------TIMER-------------------------*/
+#timer {
+    text-align: center;
+    color: #fff;
+    font-size: 26px;
+    padding: 7px 14px;
+    background-color: var(--main-accent-color);
+    border: none;
+    border-radius: 5px;
+}
+
+
 /*-----------------------GRID-------------------------*/
 #memory-grid {
     display: grid;
@@ -42,10 +57,11 @@ main {
     gap: 15px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    border: 6px solid #e9c0c1;
+    border: 6px solid var(--border-color);
     padding: 15px;
     background-color: #fff;
 }
+
 
 /*-----------------------CARDS-------------------------*/
 .card {
@@ -135,8 +151,7 @@ main {
     padding: 5px;
     background: #fff;
     transform: rotateY(180deg);
-    /* border: 2px solid #9dc2b5; */
-    border: 2px solid #e9c0c1;
+    border: 2px solid var(--border-color);
 
     & img {
         height: 100%;
@@ -148,8 +163,7 @@ main {
     height: 40px;
     width: 150px;
     font-size: 22px;
-    background-color: #EB868F;
-    /* background-color: #fb9d7f; */
+    background-color: var(--main-accent-color);
     border: none;
     border-radius: 5px;
     color: #fff;
